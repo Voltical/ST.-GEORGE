@@ -1,3 +1,4 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
 <header class="navbar">
     <div class="container">
         <div class="logo">
