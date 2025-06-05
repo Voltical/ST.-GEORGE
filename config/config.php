@@ -1,6 +1,4 @@
 <?php
-// Pas dit aan als je site in een subfolder staat zoals bijv. "/stgeorge/"
-$base_url = '/';
-
-// Absolute pad op de server (voor includes)
-$root_path = $_SERVER['DOCUMENT_ROOT'] . $base_url;
+// Zet dit naar jouw lokale projectpad
+$base_url = '/ST.-GEORGE/'; // met slashes vooraan en achteraan
+$root_path = __DIR__ . '/'; // absolute pad naar de projectmap zelf

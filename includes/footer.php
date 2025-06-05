@@ -1,10 +1,10 @@
-<?php include_once 'config/config.php'; ?>
+<?php include_once __DIR__ . '/../config/config.php'; ?>
 <footer class="bg-white dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="https://www.schuterijstgeorge.nl/" class="flex items-center">
-                  <img src="assets/img/logo.svg" class="h-8 me-3 invert brightness-0" alt="Schutterij Logo" />
+                  <img src="<?= $base_url ?>assets/img/logo.svg" class="h-8 me-3 invert brightness-0" alt="Schutterij Logo" />
                   <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ST. George</span>
               </a>
           </div>

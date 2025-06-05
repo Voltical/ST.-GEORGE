@@ -1,8 +1,8 @@
-<?php include_once 'config/config.php'; ?>
+<?php include_once __DIR__ . '/../config/config.php'; ?>
 <header class="navbar">
     <div class="container">
         <div class="logo">
-            <img src="assets/img/logo.svg" alt="Logo">
+            <img src="<?= $base_url ?>assets/img/logo.svg" class="h-8 me-3" alt="Logo">
             <span>Schutterij ST. George</span>
         </div>
         <nav id="nav-menu">
