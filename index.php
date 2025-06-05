@@ -7,20 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <div class="wrapper">
-        <?php include 'includes/navbar.php'; ?>
+<body class="min-h-screen flex flex-col">
 
-        <main class="content">
-            <section class="hero">
-                <h1>Welkom bij Schutterij St. George</h1>
-                <p>Sinds 1555 – een rijke traditie in Simpelveld</p>
-            </section>
+    <!-- Navbar -->
+    <?php include 'includes/navbar.php'; ?>
 
-            <!-- Je kunt hier extra secties toevoegen -->
-        </main>
+    <!-- Inhoud -->
+    <main class="flex-grow">
+        <section class="hero text-center py-24 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+            <h1 class="text-4xl font-bold mb-4">Welkom bij Schutterij St. George</h1>
+            <p class="text-lg">Sinds 1555 – een rijke traditie in Simpelveld</p>
+        </section>
 
-        <?php include 'includes/footer.php'; ?>
-    </div>
+        <!-- Andere secties kunnen hier -->
+    </main>
+
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
+
 </body>
 </html>
