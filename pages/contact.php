@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
