@@ -7,44 +7,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotogalerij | ST. George</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50">
 
+    <!-- Navbar -->
     <?php include '../includes/navbar.php'; ?>
 
     <main class="flex-grow">
-        <section class="p-8 text-center">
-            <h1 class="text-3xl font-bold mb-4">Fotogalerij</h1>
-            <p class="text-gray-600 mb-10">Herinneringen van de schutterij</p>
+        <section class="py-12 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-bold mb-2 text-blue-900">Fotogalerij</h1>
+                <p class="text-gray-500">Herinneringen van de schutterij door de jaren heen</p>
+            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <?php
-                $stmt = $db->query("SELECT * FROM gallery_photos ORDER BY uploaded_at DESC");
-                $photos = $stmt->fetchAll();
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Sidebar links -->
+                <aside class="lg:col-span-2 hidden lg:block space-y-6">
+                    <div class="bg-white p-4 rounded shadow text-sm leading-relaxed">
+                        <h3 class="font-semibold text-blue-800 mb-2">Wist je dat?</h3>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Opgericht in 1442</li>
+                            <li>Meerdere koningsparen per decennium</li>
+                            <li>Altijd in uniform tijdens optochten</li>
+                        </ul>
+                    </div>
 
-                if ($photos):
-                    foreach ($photos as $photo): ?>
-                        <div class="bg-white rounded shadow hover:shadow-lg transition overflow-hidden flex flex-col">
-                            <div class="relative w-full aspect-[4/3] bg-gray-100 flex items-center justify-center">
-                                <img src="<?= $base_url . $photo['image_path'] ?>"
-                                     alt="<?= htmlspecialchars($photo['title']) ?>"
-                                     class="absolute max-h-full max-w-full object-contain p-2">
-                            </div>
-                            <div class="p-3 text-center">
-                                <h3 class="text-base font-semibold break-words"><?= htmlspecialchars($photo['title']) ?></h3>
-                            </div>
-                        </div>
-                    <?php endforeach;
-                else: ?>
-                    <p class="text-gray-500 col-span-full">Er zijn nog geen foto's toegevoegd.</p>
-                <?php endif; ?>
+                    <div class="bg-blue-100 border-l-4 border-blue-500 p-4 rounded">
+                        <h3 class="font-semibold text-blue-700">Lid worden?</h3>
+                        <p class="text-sm text-gray-700 mt-1">Iedereen is welkom bij onze gemeenschap.</p>
+                        <a href="<?= $base_url ?>pages/contact.php" class="text-blue-700 underline text-sm mt-2 inline-block">Bekijk inschrijfinfo →</a>
+                    </div>
+                </aside>
+
+                <!-- Galerij -->
+                <div class="lg:col-span-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <?php
+                        $stmt = $db->query("SELECT * FROM gallery_photos ORDER BY uploaded_at DESC");
+                        $photos = $stmt->fetchAll();
+
+                        if ($photos):
+                            foreach ($photos as $photo): ?>
+                                <div class="group bg-white rounded shadow hover:shadow-lg transition overflow-hidden">
+                                    <a href="<?= $base_url . $photo['image_path'] ?>" class="glightbox" data-gallery="galerij">
+                                        <div class="relative w-full aspect-[3/2] overflow-hidden h-64 sm:h-72 md:h-80">
+                                            <img src="<?= $base_url . $photo['image_path'] ?>"
+                                                 alt=""
+                                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php endforeach;
+                        else: ?>
+                            <p class="text-gray-500 col-span-full">Er zijn nog geen foto's toegevoegd.</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+                <!-- Sidebar rechts -->
+                <aside class="lg:col-span-2 hidden lg:block space-y-6">
+                    <div class="bg-white p-4 rounded shadow text-sm">
+                        <h3 class="font-semibold text-blue-800 mb-2">Filter op jaartal</h3>
+                        <select class="w-full border border-gray-300 rounded px-2 py-1 text-sm">
+                            <option>Alle jaren</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-white p-4 rounded shadow text-sm">
+                        <h3 class="font-semibold text-blue-800 mb-2">Contact</h3>
+                        <p class="text-gray-600">Heb je zelf foto's of wil je meedoen met de vereniging? Laat het ons weten!</p>
+                        <a href="<?= $base_url ?>pages/contact.php" class="text-blue-600 underline text-sm">Stuur een bericht →</a>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
 
+    <!-- GLightbox script -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({ selector: '.glightbox' });
+    </script>
 </body>
 </html>
