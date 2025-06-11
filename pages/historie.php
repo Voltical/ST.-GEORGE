@@ -1,11 +1,20 @@
+<?php include_once '../config/config.php'; ?>
+<?php include_once '../includes/db.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historie | ST. George</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
-<body>
+<body class="flex flex-col min-h-screen bg-gray-50">
+
+
+<?php include '../includes/navbar.php'; ?>
 
 <h1> Oorsprong en vroege geschiedenis
 Hoewel het exacte oprichtingsjaar niet met zekerheid is vast te stellen, wordt aangenomen dat Schutterij St. George rond 1447 is opgericht. Dit baseert men op het feit dat de vereniging in 1997 haar 550-jarig jubileum vierde en in 2022 het 575-jarig bestaan. 
@@ -27,6 +36,11 @@ ________________________________________
 In 2018 vierde Schutterij St. George een dubbel jubileum: het 575-jarig bestaan en het 250e Bondsschuttersfeest. Het feest trok duizenden bezoekers naar Simpelveld en omvatte onder andere een optocht, schietwedstrijden en een expositie over de geschiedenis van de schutterij. 
 In 2023 behaalde de schutterij een derde plaats bij het prestigieuze Oud Limburgs Schuttersfeest (OLS) in Born.
 </h1>
-    
+     <?php include '../includes/footer.php'; ?>
+     <!-- GLightbox script -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({ selector: '.glightbox' });
+    </script>
 </body>
 </html>
