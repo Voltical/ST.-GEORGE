@@ -13,8 +13,11 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50">
 
-
 <?php include '../includes/navbar.php'; ?>
+
+
+
+
 
 
      <?php include '../includes/footer.php'; ?>
