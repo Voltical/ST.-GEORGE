@@ -54,7 +54,7 @@
     </section>
 
     <section>
-        <img src="<?= $base_url ?>assets/images/jubileum-optocht.jpg" alt="Jubileumoptocht" class="rounded-xl shadow-lg mb-4 w-full h-auto">
+        <img src="<?= $base_url ?>uploads/gallery/feest.jpg" alt="Jubileumoptocht" class="rounded-xl shadow-lg mb-4 w-full h-auto">
         <h2 class="text-2xl font-bold text-gray-900 mb-2">Jubilea en recente activiteiten</h2>
         <p class="text-lg leading-relaxed text-gray-800">
             In 2018 vierde Schutterij St. George een dubbel jubileum: het 575-jarig bestaan en het 250e Bondsschuttersfeest. Het feest trok duizenden bezoekers naar Simpelveld en omvatte onder andere een optocht, schietwedstrijden en een expositie over de geschiedenis van de schutterij.
