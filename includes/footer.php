@@ -46,8 +46,7 @@
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 1442 <a href="https://www.schuterijstgeorge.nl/" class="hover:underline">Schutterij ST. George™</a>. All Rights Reserved.
-          </span>
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"> © 1442–<?= date('Y') ?> <a href="https://www.schutterijstgeorge.nl/" class="hover:underline">Schutterij ST. George™</a>. All Rights Reserved.</span></span>
           <div class="flex mt-4 sm:justify-center sm:mt-0">
               <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                   <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
