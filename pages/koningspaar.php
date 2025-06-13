@@ -24,7 +24,9 @@
   <?php
   $stmt = $db->query('SELECT * FROM koningsparen ORDER BY year DESC');
   foreach ($stmt as $row):
-    $foto_url = 'uploads/gallery/' . htmlspecialchars($row['foto_path']);
+   $foto_url = $base_url . 'uploads/gallery/' . htmlspecialchars($row['foto_path']);
+
+
 
   ?>
     <div class="bg-white rounded-xl shadow-md overflow-hidden p-4 text-center">
