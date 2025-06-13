@@ -252,4 +252,12 @@ nav a.active::after {
 }
 
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  scroll-margin-top: 100px; 
+}
+
 
