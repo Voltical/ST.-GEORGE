@@ -17,9 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        // Hier kun je bijv. mail() gebruiken of database insert
         // mail('jij@email.com', 'Nieuw contactbericht', "Naam: $naam\nE-mail: $email\n\n$bericht");
-
         $success = true;
     }
 }
@@ -35,14 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
 <?php include '../includes/navbar.php'; ?>
 
-<main class="flex-grow container mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold text-center mb-8">Neem contact op</h1>
-
-    <div class="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6">
+<main class="flex-1 flex items-center justify-center px-4 py-12">
+    <div class="w-full max-w-xl bg-white shadow-md rounded-xl p-8">
+        <h1 class="text-3xl font-bold text-center mb-6">Neem contact op</h1>
 
         <?php if ($success): ?>
             <div class="mb-6 p-4 text-green-800 bg-green-100 border border-green-200 rounded">
@@ -58,20 +55,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div>
                 <label for="naam" class="block mb-1 font-medium">Naam</label>
                 <input type="text" id="naam" name="naam" value="<?= htmlspecialchars($_POST['naam'] ?? '') ?>" required
-                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                       class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
             </div>
             <div>
                 <label for="email" class="block mb-1 font-medium">E-mailadres</label>
                 <input type="email" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required
-                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                       class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
             </div>
             <div>
                 <label for="bericht" class="block mb-1 font-medium">Bericht</label>
                 <textarea id="bericht" name="bericht" rows="5" required
-                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"><?= htmlspecialchars($_POST['bericht'] ?? '') ?></textarea>
+                          class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"><?= htmlspecialchars($_POST['bericht'] ?? '') ?></textarea>
             </div>
             <div class="text-center">
-                <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-md transition duration-200">
+                <button type="submit"
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-md transition duration-200">
                     Verstuur
                 </button>
             </div>
