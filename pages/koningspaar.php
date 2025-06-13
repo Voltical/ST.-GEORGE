@@ -31,9 +31,6 @@
   ?>
     <div class="bg-white rounded-xl shadow-md overflow-hidden p-4 text-center">
       <h2 class="text-2xl font-semibold text-blue-700 mb-2"><?= htmlspecialchars($row['year']) ?></h2>
-      
-      <!-- DEBUG: Toon pad zodat je weet of het klopt -->
-      <p class="text-sm text-red-600">Pad: <?= $foto_url ?></p>
 
       <a href="<?= $foto_url ?>" class="glightbox block">
         <img src="<?= $foto_url ?>" alt="Foto <?= $row['year'] ?>" class="w-full h-80 object-cover rounded-lg mb-4 transition hover:scale-105 duration-300">
