@@ -249,6 +249,7 @@ nav a.active::after {
   font-size: 2rem;
   color: white;
   text-decoration: none;
+<<<<<<< Updated upstream
 }
 
 
@@ -261,3 +262,6 @@ h2 {
 }
 
 
+=======
+}
+>>>>>>> Stashed changes
